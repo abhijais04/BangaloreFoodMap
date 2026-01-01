@@ -1,0 +1,7 @@
+{
+  "name": "Bangalore Foodie Maps - Admin",
+  "description": "A high-end management platform for curating and mapping the best food spots in Bangalore, featuring AI-assisted content generation and real-time mapping.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,13 +1,16 @@
+
 name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - main
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v4
 
       - name: Install and Build 🔧
@@ -15,8 +18,8 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # The branch the action will deploy to
-          folder: build    # The folder the action should deploy (use 'dist' for Vite)
+          branch: gh-pages
+          folder: dist

@@ -47,7 +47,7 @@ export const UserSidebar: React.FC<UserSidebarProps> = ({
           <PlaceCard 
             key={place.id}
             place={place}
-            isAdmin={false}
+            // Fix: Removed the non-existent isAdmin prop to resolve TypeScript error
             isActive={selectedPlaceId === place.id}
             onSelect={onSelect}
           />

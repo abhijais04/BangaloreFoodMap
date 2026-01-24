@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Bangalore Foodie Maps
 
-# Run and deploy your AI Studio app
+A platform for curating and mapping the best food spots in Bangalore. This application features a real-time interactive map, category filtering, and a sleek discovery interface.  
 
-This contains everything you need to run your app locally.
+## 🚀 Getting Started Locally
 
-View your app in AI Studio: https://ai.studio/apps/drive/18ouP_hgrAf-aRqpL_1iv_QxvD9atXyN_
+Follow these steps to get the project up and running on your machine.
 
-## Run Locally
+### Prerequisites
 
-**Prerequisites:**  Node.js
+- **Node.js**: Version 18.0 or higher
+- **npm**: Version 9.0 or higher
 
+### Installation
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/BangaloreFoodMap.git
+   cd BangaloreFoodMap
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173/BangaloreFoodMap/`.
+
+### Building for Production
+
+To create a production-ready build:
+```bash
+npm run build
+```
+The output will be generated in the `dist/` folder.
+
+## 🌐 Deployment to GitHub Pages
+
+The project is pre-configured for GitHub Pages.
+
+1. **GitHub Action**: Every push to the `main` branch triggers the `.github/workflows/deploy.yaml` workflow, which automatically builds and deploys the site to the `gh-pages` branch.
+2. **Repository Settings**:
+   - Go to **Settings > Pages**.
+   - Set the source branch to `gh-pages` and folder to `/ (root)`.
+3. **Vite Configuration**:
+   - Ensure the `base` property in `vite.config.ts` matches your repository name (currently set to `/BangaloreFoodMap/`).
+
+## 🛠️ Tech Stack
+
+- **React 19**: UI components and state management.
+- **Vite**: Ultra-fast build tool and dev server.
+- **Tailwind CSS**: Utility-first styling.
+- **Leaflet**: Open-source interactive maps.
+- **TypeScript**: Static typing for robust code.
+- **Google Gemini API**: Integrated for future AI-assisted content (optional).
+

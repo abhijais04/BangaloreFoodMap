@@ -7,6 +7,11 @@ export interface Review {
   date: string;
 }
 
+export interface Dish {
+  id: string;
+  name: string;
+}
+
 export interface FoodPlace {
   id: string;
   name: string;
@@ -18,6 +23,7 @@ export interface FoodPlace {
   imageUrl: string;
   address: string;
   reviews: Review[];
+  dishes: Dish[];
 }
 
 export type PlaceCategory = 'Fine Dining' | 'Cafe' | 'Street Food' | 'Pub' | 'Fast Food' | 'Bakery';

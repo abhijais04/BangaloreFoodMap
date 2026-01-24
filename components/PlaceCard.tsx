@@ -35,7 +35,15 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="font-semibold text-slate-800 truncate leading-tight mb-0.5">{place.name}</h3>
-          <p className="text-[10px] text-indigo-600 mb-1.5 font-bold uppercase tracking-wider">{place.category}</p>
+          <p className="text-[10px] text-indigo-600 mb-1.5 font-bold uppercase tracking-wider">{place.category}</p> 
+          {/* Top 3 Dishes */}
+          <div className="flex flex-wrap gap-1 mb-2">
+            {place.dishes.slice(0, 3).map(dish => (
+              <span key={dish.id} className="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-medium truncate max-w-[80px]">
+                {dish.name}
+              </span>
+            ))}
+          </div>
           <div className="flex items-center text-[11px] text-slate-500">
             <MapPin className="w-3 h-3 mr-1 text-slate-400" />
             <span className="truncate">{place.address}</span>

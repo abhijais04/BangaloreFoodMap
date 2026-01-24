@@ -15,6 +15,11 @@ export const INITIAL_PLACES: FoodPlace[] = [
     imageUrl: 'https://picsum.photos/seed/mtr/600/400',
     address: 'Whitefield, Bangalore',
     reviews: [
-    ]
+    ],
+  dishes: [
+    { id: 'd1', name: 'Butter Chicken' },
+    { id: 'd2', name: 'Mutton Rogan Josh' },
+    { id: 'd3', name: 'Chilli Laccha Paratha' }
+  ],
   }
 ];

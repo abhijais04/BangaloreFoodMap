@@ -4,10 +4,9 @@ import { FoodPlace } from './types';
 import { INITIAL_PLACES } from './constants';
 import { MapDisplay } from './components/MapDisplay';
 import { UserSidebar } from './components/UserSidebar';
-import { MapPin } from './components/Icons';
+import { MapPin, Utensils } from './components/Icons';
 
 const App: React.FC = () => {
-  // Use static initial places as the single source of truth
   const [places] = useState<FoodPlace[]>(INITIAL_PLACES);
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -56,8 +55,8 @@ const App: React.FC = () => {
         
         {/* Floating Info Panel */}
         {selectedPlace && (
-          <div className="absolute bottom-8 right-8 w-96 bg-white rounded-2xl shadow-2xl border border-white z-[1000] overflow-hidden animate-in slide-in-from-bottom-4 duration-500">
-            <div className="relative">
+          <div className="absolute bottom-8 right-8 w-96 bg-white rounded-2xl shadow-2xl border border-white z-[1000] overflow-hidden animate-in slide-in-from-bottom-4 duration-500 flex flex-col max-h-[85vh]">
+            <div className="relative shrink-0">
               <img 
                 src={selectedPlace.imageUrl} 
                 className="w-full h-44 object-cover" 
@@ -74,7 +73,7 @@ const App: React.FC = () => {
               </div>
             </div>
             
-            <div className="p-6">
+            <div className="p-6 overflow-y-auto">
               <div className="flex justify-between items-start mb-3">
                 <h2 className="text-xl font-black text-slate-800 tracking-tight">{selectedPlace.name}</h2>
                 <div className="flex items-center gap-1.5 px-2 py-1 bg-amber-50 text-amber-600 rounded-lg">
@@ -86,6 +85,25 @@ const App: React.FC = () => {
               <p className="text-sm text-slate-500 mb-6 leading-relaxed font-medium italic">
                 "{selectedPlace.description}"
               </p>
+
+              {/* Dishes Section */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Utensils className="w-4 h-4 text-indigo-500" />
+                  <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Must-Try Dishes</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 gap-2">
+                  {selectedPlace.dishes.map((dish) => (
+                    <div key={dish.id} className="flex justify-between items-center bg-slate-50 px-3 py-2.5 rounded-xl border border-slate-100">
+                      <span className="text-sm font-bold text-slate-700">✨ {dish.name}</span>
+                    </div>
+                  ))}
+                  {selectedPlace.dishes.length === 0 && (
+                    <p className="text-xs text-slate-400 italic py-2">No dishes listed for this place.</p>
+                  )}
+                </div>
+              </div>
               
               <div className="flex items-center gap-2.5 text-xs font-bold text-slate-400 border-t border-slate-50 pt-4">
                 <MapPin className="w-4 h-4 text-slate-300" />

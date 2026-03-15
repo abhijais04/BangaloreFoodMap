@@ -2,6 +2,8 @@
 
 A platform for curating and mapping the best food spots in Bangalore. This application features a real-time interactive map, category filtering, and a sleek discovery interface.  
 
+See the live page here: https://abhijais04.github.io/BangaloreFoodMap/
+
 ## 🚀 Getting Started Locally
 
 Follow these steps to get the project up and running on your machine.
